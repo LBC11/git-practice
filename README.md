@@ -187,3 +187,66 @@ logs/**/debug.log
     
     
 
+## 원격 저장소 사용
+#### 원격 저장소 추가
+    git remote add "(원격 저장소 이름)" "(원격 저장소 주소)"
+    
+#### 원격 기본 브랜치명 설정(main이 기본)
+    git branch -M "(branch 이름)"
+    
+#### 로컬 저장소의 커밋 내용들 원격으로 push
+    git push -u "(원격 저장소 이름)" "(branch 이름)"
+    
++ -u 또는 --set-upstream: 현재 브랜치와 명시된 원격 브랜치 기본 연결
+
+#### 원격 목록 보기
+    git remote
+    
+    #자세히 보기
+    git remote -v
+    
+#### 원격 지우기(로컬 프로젝트와의 연결만 없애는 것. Github의 레포지토리는 없어지지 않음
+    git remote remove "(원격 저장소 이름)"
+    
+#### 원격 저장소의 project 복사
+    git clone "(원격 저장소 주소)"
+
+
+## push와 pull
+#### push
+    # 앞에서 -u로 설정해놓았을 경우 
+    git push
+    # 안 해놓은 경우
+    git push "(원격 저장소 이름)" "(branch 이름)"
+    
+#### pull
+    git pull
+    
++ pull 할 것이 있을 때 push를 하면?
+    + 원격에 먼저 적용된 새 버전이 있으므로 적용 불가
+    + pull 해서 원격의 버전을 받아온 다음 push 가능
+
+#### local의 강제 내용 push하기
+    git push --force
+    
+## 원격의 브랜치 다루기
++ 원격 branch 만들기
+    + 1. local에서 branch 만들어 원격으로 push
+    + 2. github에서 생성
+
+#### local과 원격의 브랜치들 확인
+    git branch --all
+    
+#### 원격의 변경사항 확인
+    git fetch
+    
+#### local에 같은 이름의 branch를 생성하고 연결 그리고 switch
+    git switch -t "(원격 저장소 이름)"/"(원격 branch 이름)"
+    
+#### 원격의 branch 삭제
+    git push "(원격 이름)" --delete "(원격의 브랜치명)"
+    
+    
+
+
+
