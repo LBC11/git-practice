@@ -91,3 +91,72 @@ logs/**/debug.log
 #### commit 확인
     git log
     
+## 과거로 돌아가는 2가지 방법
++ reset : 원하는 시점으로 돌아간 뒤 이후 내역들을 지웁니다.  
+    git reset --hard (돌아갈 커밋 해시) 
+    
++ revert : 되돌리기 원하는 시점의 커밋을 거꾸로 실행합니다.
+    git revert (되돌릴 커밋 해시)
+    
++  커밋해버리지 않고 revert하기
+    git revert --no-commit (되돌릴  커밋 해시)
+    
++ 참고
+    + Git에서 reset, revert로 이동할 때 저장되어 있는 파일을 불러와서 현재의 파일에 변경을 주는 것이지 지금 현재의 파일을 통째로 저장되어 있는 파일로 바꾸는 것이 아니다.
+    + => 현재의 파일 중 저장되어 있던 snapshot에 없던 file은 삭제되는 것이 아니라 그대로 남아있다.  
+    
+## 여러 branch 만들어 보기
+#### branch 생성
+    git branch "(branch 이름)"
+    
+#### branch 목록 확인
+    git branch
+    
+#### branch 이동
+    git switch "(branch 이름)"
+    
+#### branch 생성과 동시에 이동하기
+    git switch -c "(branch 이름)"
+    
+#### branch 삭제하기
+    git branch -d "(branch 이름)"
+    
+#### branch 강제 삭제하기(지워질 branch에만 내용이 있을 경우)
+    git branch -D "(branch 이름)"
+    
+#### branch 이름 바꾸기
+    git branch -m "(기존 branch 이름)" "(새로운 branch 이름)"
+    
+#### 여러 branch의 내역 보기
+    git log --all --decorate --oneline --graph
+    
+## branch를 합치는 2가지 방법
++ merge : 두 브랜치를 한 커밋에 이어붙입니다.  
+    + 브랜치 사용내역을 남길 필요가 있을 때 적합한 방식입니다.  
+    + 다른 형태의 merge에 대해서도 이후 다루게 될 것입니다.  
+
++ rebase : 브랜치를 다른 브랜치에 이어붙입니다.  
+    + 한 줄로 깔끔히 정리된 내역을 유지하기 원할 때 적합합니다.  
+    + 이미 팀원과 공유된 커밋들에 대해서는 사용하지 않는 것이 좋습니다.  
+    
+#### merge
++ add-coach 브랜치를 main 브랜치로 merge
+    + main 브랜치로 이동
+    + 아래의 명령어로 병합
+```
+    git merge add-coach
+```
++ merge는 reset으로 되돌리기 가능
+    + merge도 하나의 커밋
+    + merge하기 전 해당 브랜치의 마지막 시점으로
+
+#### rebase
++ new-teams 브랜치를 main 브랜치로 rebase
+    + new-teams 브랜치로 이동
+    + merge때와는 반대!
+    + 아래의 명령어로 병합
+```
+    git rebase main
+```
+
+
