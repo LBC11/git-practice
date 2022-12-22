@@ -140,6 +140,7 @@ logs/**/debug.log
     + 이미 팀원과 공유된 커밋들에 대해서는 사용하지 않는 것이 좋습니다.  
     
 #### merge
+![conclusion_image](https://github.com/jeewonkimm2/Business_Analytics/blob/main/Visualization/map_image.png)
 + add-coach 브랜치를 main 브랜치로 merge
     + main 브랜치로 이동
     + 아래의 명령어로 병합
@@ -151,6 +152,7 @@ logs/**/debug.log
     + merge하기 전 해당 브랜치의 마지막 시점으로
 
 #### rebase
+![conclusion_image](https://github.com/jeewonkimm2/Business_Analytics/blob/main/Visualization/map_image.png)
 + new-teams 브랜치를 main 브랜치로 rebase
     + new-teams 브랜치로 이동
     + merge때와는 반대!
@@ -158,6 +160,12 @@ logs/**/debug.log
 ```
     git rebase main
 ```
++ sourceTree 에서 확인해보면 main branch 가 new-teams보다 시간선이 뒤쳐져 있는 상황
+    + 다시 main으로 이동
+    + git merge new-teams
++ 이제 필요없는 new-teams 삭제
+    + git branch -d new-teams
+
 
 ## 충돌 해결하기
 #### merge
@@ -246,7 +254,3 @@ logs/**/debug.log
 #### 원격의 branch 삭제
     git push "(원격 이름)" --delete "(원격의 브랜치명)"
     
-    
-
-
-
