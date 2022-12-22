@@ -159,4 +159,31 @@ logs/**/debug.log
     git rebase main
 ```
 
+## 충돌 해결하기
+#### merge
++ 충돌 해결이 어려운 경우
+```
+    git merge --abort
+```
+
++ 충돌 해결이 가능한 경우
+    + 충돌 부분 수정
+    + git add .
+    + git commit
+
+#### rebase
++ 충돌 해결이 어려운 경우
+```
+    git rebase -- abort
+```
++ 충돌 해결이 가능한 경우
+    + 충돌 부분 수정
+    + 아래 명령어로 계속
+```
+    git rebase --continue
+```
+    + git add .
+    + git commit
+    
+    
 
