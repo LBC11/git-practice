@@ -104,7 +104,8 @@ logs/**/debug.log
 + 참고
     + Git에서 reset, revert로 이동할 때 저장되어 있는 파일을 불러와서 현재의 파일에 변경을 주는 것이지 지금 현재의 파일을 통째로 저장되어 있는 파일로 바꾸는 것이 아니다.
     + => 현재의 파일 중 저장되어 있던 snapshot에 없던 file은 삭제되는 것이 아니라 그대로 남아있다.  
-    
+    + 협업할 때는 reset 대신 revert를 써야 한다. reset의 경우는 일정 시점 이후의 기록을 모두 삭제하기 때문에 그것을 기반으로 코딩하고 있는 팀원들에게 혼동을 줄 수 있다.
+
 ## 여러 branch 만들어 보기
 #### branch 생성
     git branch "(branch 이름)"
@@ -149,7 +150,8 @@ logs/**/debug.log
 ```
 + merge는 reset으로 되돌리기 가능
     + merge도 하나의 커밋
-    + merge하기 전 해당 브랜치의 마지막 시점으로
+    + merge하기 전 해당 브랜치의 마지막 시점으로 reset 실행
++ 브랜치의 사용 내역들을 남겨둘 필요가 있다면 merge를 추천한다.
 
 #### rebase
 ![conclusion_image](https://github.com/LBC11/git-practice/blob/main/rebase.png)
@@ -165,7 +167,7 @@ logs/**/debug.log
     + git merge new-teams
 + 이제 필요없는 new-teams 삭제
     + git branch -d new-teams
-
++ history를 깔끔하게 정리하고 싶다면 rebase를 추천한다.
 
 ## 충돌 해결하기
 #### merge
