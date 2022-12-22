@@ -254,3 +254,8 @@ logs/**/debug.log
 #### 원격의 branch 삭제
     git push "(원격 이름)" --delete "(원격의 브랜치명)"
     
+## .gitignore가 적용이 안될때
+    git rm -r --cached .
+    git add .
+    git commit -m "clear git cache"
+    git push
