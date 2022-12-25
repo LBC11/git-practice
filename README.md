@@ -261,3 +261,7 @@ logs/**/debug.log
     git add .
     git commit -m "clear git cache"
     git push
+    
+## git message 수정
+    git commit --amend
+    
