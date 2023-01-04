@@ -20,6 +20,8 @@
     
 #### 기본 브랜치명 변경
     git config --global init.defaultBranch main  
+
+- - -
     
 ## 프로젝트 생성 & Git 관리 시작  
 #### .git folder 생성
@@ -66,6 +68,8 @@ logs/**/debug.log
 </code>
 </pre>
 
+- - -
+
 ## 변화를 타임캡슐에 담아 묻기
 #### 파일 하나 담기
     git add "(파일 이름)"
@@ -90,6 +94,8 @@ logs/**/debug.log
     
 #### commit 확인
     git log
+    
+- - -
     
 ## 과거로 돌아가는 2가지 방법
 + reset : 원하는 시점으로 돌아간 뒤 이후 내역들을 지웁니다.  
@@ -169,6 +175,8 @@ logs/**/debug.log
     + git branch -d new-teams
 + history를 깔끔하게 정리하고 싶다면 rebase를 추천한다.
 
+- - -
+
 ## 충돌 해결하기
 #### merge
 + 충돌 해결이 어려운 경우
@@ -195,7 +203,7 @@ logs/**/debug.log
     + git add .
     + git commit
     
-    
+- - -
 
 ## 원격 저장소 사용
 #### 원격 저장소 추가
@@ -221,6 +229,7 @@ logs/**/debug.log
 #### 원격 저장소의 project 복사
     git clone "(원격 저장소 주소)"
 
+- - -
 
 ## push와 pull
 #### push
@@ -238,7 +247,9 @@ logs/**/debug.log
 
 #### local의 강제 내용 push하기
     git push --force
-    
+
+- - -
+
 ## 원격의 브랜치 다루기
 + 원격 branch 만들기
     + 1. local에서 branch 만들어 원격으로 push
@@ -255,7 +266,9 @@ logs/**/debug.log
     
 #### 원격의 branch 삭제
     git push "(원격 이름)" --delete "(원격의 브랜치명)"
-    
+
+- - -
+
 ## .gitignore가 적용이 안될때
     git rm -r --cached .
     git add .
