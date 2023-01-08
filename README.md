@@ -269,12 +269,18 @@ logs/**/debug.log
 
 - - -
 
-## .gitignore가 적용이 안될때
+## fork
+
+
+- - -
+
+## 기타
+#### .gitignore가 적용이 안될때
     git rm -r --cached .
     git add .
     git commit -m "clear git cache"
     git push
     
-## git message 수정
+#### git message 수정
     git commit --amend
     
