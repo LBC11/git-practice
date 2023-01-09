@@ -270,7 +270,7 @@ logs/**/debug.log
 - - -
 
 ## fork
-
+다른 사람의 repository를 내 계정의 repository로 가져오는 것을 말한다.
 
 - - -
 
